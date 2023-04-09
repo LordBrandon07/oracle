@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<h1>ADIVINE</h1>
+
+<script>
+    function sli(){
+        document.write('<br><br>')
+    }
+    function imprimir(a){
+        document.write(a);
+        sli();
+    }
+
+    var pensado = Math.round(Math.random()*10);
+    var inten = 3;
+    var count = 1;
+
+    while (count <= inten) {
+        var lanzado = parseInt(prompt('ingrese un numero entre 0 y 10 '))
+
+        if (pensado == lanzado) {
+            alert('gano chupavergas, en el intento ' + count)
+            break
+        }
+        else {
+            alert('perdio maestro')
+        }
+        count ++
+    }
+    imprimir('numero: ' + pensado)
+</script>

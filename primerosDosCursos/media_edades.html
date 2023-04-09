@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<h1>EDADES</h1>
+
+<script>
+    function sli(){
+        document.write('<br><br>')
+    }
+    function imprimir(a){
+        document.write(a);
+        sli();
+    }
+
+    var da = parseInt(prompt('ingrese cantidad de miembros'));
+    var count = 1;
+    var te = 0;
+
+    while (count <= da) {
+        ed = parseInt(prompt('ingrese la edad'));
+        te = te + ed;
+        count ++;
+    }
+    var med = te / da
+    imprimir(te)
+    imprimir(med)
+
+</script>

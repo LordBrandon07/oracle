@@ -1,0 +1,42 @@
+<!-- <meta charset="UTF-8">
+<h1>Usando JavaScript por primera vez</h1>
+<script>
+    alert("Este es un pop-up en JavaScript");
+</script>
+
+Esto está fuera de JavaScript... -->
+
+<!-- <meta charset="UTF-8">
+
+<script>
+    document.write('carenalga es...<br>' +(5+9+2))
+    document.write('...<br>')
+</script> -->
+
+<script>
+
+    function sli() {
+        document.write('<br>');
+    }
+
+    function imprimir(frase){
+        sli();
+        document.write(frase)   
+    }
+
+    var ano = 2023;
+    var sl = '<br>'
+
+    document.write('pepe tiene: ' +(ano-2000) + ' años', sl);
+    ano=2030;
+    document.write('papa tiene: ' +(ano-2000) + ' años'), sl;
+    
+    pepe = 23
+    papa = 30
+    promedio = (pepe+papa)/2;
+    sli();
+    document.write('el promedio es: ', Math.round(promedio));
+    imprimir('caremonda')
+    imprimir(promedio)
+</script>
+

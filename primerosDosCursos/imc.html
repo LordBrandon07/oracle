@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<h1>IMC</h1>
+
+<script>
+    function sli(){
+        document.write('<br>')
+    }
+    function imprimir(a){
+        document.write(a);
+        sli();
+    }
+
+    function cimc(p, a) {
+        imc = p/(a*a)
+        return imc
+    }
+
+
+    p = prompt('ingrese su peso: ');
+    a = prompt('ingrese su altura: ');
+
+    simc = cimc(p, a)
+
+    imprimir('mi imc es: ' + simc);
+
+
+    if (simc < 18.5) {
+        imprimir('usted es un desnutrido');
+    }
+    if (simc >= 18.5 && simc <25) {
+            imprimir('esta bien loka');
+    }
+    if (simc >= 25 && simc <= 29.9) {
+        imprimir('ya esta gordo mi chino');
+    }
+    if (simc >= 30) {
+        imprimir('ya esta re obeso rata');
+    }
+
+</script>

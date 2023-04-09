@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+
+<h1>EL FIFAS</h1>
+
+<script>
+    function sli(){
+        document.write('<br><br>')
+    }
+    function imprimir(a){
+        document.write(a);
+        sli();
+    }
+
+    var mundial = 1930
+    ano = parseInt(prompt('ingrese hasta que año quiere ver'))
+
+    while (mundial <= ano) {
+        imprimir('hubo mundial en el año ' + mundial)
+        mundial += 4 
+    }
+
+</script>
