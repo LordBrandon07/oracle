@@ -1,0 +1,37 @@
+<canvas width="600" height="400">
+
+</canvas>
+
+<script>
+
+    let screen = document.querySelector('canvas');
+    let brush = screen.getContext('2d');
+    brush.fillStyle = 'lightGrey';
+    brush.fillRect(0, 0, 600, 400);
+
+    function designCircumference(x, y, radio) {
+        brush.fillStyle = 'red';
+        brush.beginPath();
+        brush.arc(x, y, radio, 0, 2*Math.PI);
+        brush.fill();
+    }
+
+    function cleanScreen() {
+        brush.clearRect(0, 0, 600, 400);
+    }
+
+    let x = 0
+
+    function updateScreen() {
+        cleanScreen();
+        designCircumference(x, 20, 10);
+        x++
+    }
+
+    setInterval(updateScreen, 200)
+
+    // designCircumference(20, 20, 10)
+
+
+
+</script>
