@@ -14,7 +14,9 @@ body{
 .titulo {
     text-align: center;
     font-size: 2em;
+    text-shadow: 2px 2px 2px rgb(144, 237, 255);
 }
+
 .prueba {
     display: flex;
     margin-top: 2%;
@@ -50,12 +52,15 @@ p {
     width: 35%;
     display: flex;
     margin: auto;
-    background: #888888;
 }
 
 .lista{
     width: 40%;
     list-style: none;
+}
+
+.items::before{
+    content: '☠';
 }
 
 .items{
@@ -68,6 +73,12 @@ p {
 
 .halen {
     width: 60%;
+    box-shadow: 10px 10px 30px;
+}
+
+.halen:hover{
+    opacity: 0.7;
+    transition: 400ms;
 }
 
 .video{
