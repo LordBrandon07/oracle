@@ -1,10 +1,15 @@
 console.log('viva colombia, viva falcao')
 
-const inputNacimiento = document.querySelector('#birth');
+export function valida(input){
+    const tipoDeInput = input.dataset.tipo;
+    if(validadores[tipoDeInput]){
+        validadores[tipoDeInput](input)
+    }
+}
 
-inputNacimiento.addEventListener('blur', (evento) => {
-    validarNacimiento(evento.target);
-});
+const validadores = {
+    nacimiento: input => validarNacimiento(input)
+}
 
 function validarNacimiento(input){
     const fechaCliente = new Date  (input.value);
