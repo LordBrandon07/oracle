@@ -37,6 +37,22 @@ const mensajesDeError = {
       valueMissing: "Este campo no puede estar vacío",
       customError: "Debes tener al menos 18 años de edad",
     },
+    numero: {
+      valueMissing: "Este campo no puede estar vacío",
+      patternMismatch:"el formato es XXXXXXXXXX - 10 numeros",
+    },
+    direccion: {
+      valueMissing: "Este campo no puede estar vacío",
+      patternMismatch:"debe contener entre 10 a 40 caracterés",
+    },
+    ciudad: {
+      valueMissing: "Este campo no puede estar vacío",
+      patternMismatch:"debe contener entre 3 a 40 caracterés",
+    },
+    estado: {
+      valueMissing: "Este campo no puede estar vacío",
+      patternMismatch:"debe contener entre 3 a 40 caracterés",
+    },
   };
 
 const validadores = {
@@ -54,14 +70,14 @@ function mostrarMensajeDeError(tipoDeInput, input){
 }
 
 function validarNacimiento(input){
-    const fechaCliente = new Date  (input.value);
+    const fechaCliente = new Date(input.value);
     let mensaje = '';
     if(!mayorDeEdad(fechaCliente)){
         mensaje = 'No cumples con la edad minima'
     }
     mayorDeEdad(fechaCliente);
     
-    input.setCustomValidity(mensaje)
+    input.setCustomValidity(mensaje);
 }
 
 function mayorDeEdad(fecha){
