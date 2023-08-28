@@ -3,7 +3,8 @@ console.log(clientServices)
 
 //backticks
 
-const crearNuevaLinea = (nombre, email) => {
+const crearNuevaLinea = (nombre, email, id) => {
+    console.log(id)
     const linea = document.createElement("tr")
     const contenido = `
     <td class="td" data-td>${nombre}</td>
@@ -20,7 +21,7 @@ const crearNuevaLinea = (nombre, email) => {
         <li>
             <button
             class="simple-button simple-button--delete"
-            type="button"
+            type="button" id=${id}
             >
             Eliminar
             </button>
@@ -29,6 +30,14 @@ const crearNuevaLinea = (nombre, email) => {
     </td>
     `;
     linea.innerHTML = contenido;
+    const btn =linea.querySelector("button")
+    btn.addEventListener("click", () => {
+        const id = btn.id;
+        console.log("pintameee", id)
+        clientServices.eliminarCliente(id).then( respuesta => {
+            console.log(respuesta)
+        }).catch((error)=>alert("error caremonda 2"))
+    });
     return linea
 }
 
@@ -38,8 +47,8 @@ const table = document.querySelector("[data-table]");
 clientServices.
     listaClientes()
     .then((data) => {
-    data.forEach((perfil) => {
-        const nuevaLinea = crearNuevaLinea(perfil.nombre, perfil.email)
+    data.forEach(({nombre, email, id}) => {
+        const nuevaLinea = crearNuevaLinea(nombre, email, id)
         table.appendChild(nuevaLinea);
     });
 }).catch((error)=>alert("error caremonda"))
