@@ -1,0 +1,19 @@
+{
+  "perfil": [
+    {
+      "nombre": "lionel messi",
+      "email": "harland@alura.com",
+      "id": 1
+    },
+    {
+      "nombre": "pepe",
+      "email": "pepe@gmail.com",
+      "id": "b6d17e40-23da-42d7-80a4-17b8e744394f"
+    },
+    {
+      "nombre": "axl rose",
+      "email": "axlrose87@outlook.com",
+      "id": "37e9a962-cc26-4397-b07c-6bedfb792218"
+    }
+  ]
+}
