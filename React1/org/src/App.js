@@ -5,6 +5,7 @@ import Formulario from './componentes/Formulario/Formulario.js';
 import MyOrg from './componentes/MiOrg';
 import Equipo from './componentes/Equipo';
 import Colaborador from './componentes/Colaborador';
+import Footer from './componentes/Footer';
 
 const equipos = [
 
@@ -49,7 +50,49 @@ const equipos = [
 
 function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(false)
-  const [colaboradores, actualizarColaboradores] = useState([])
+  const [colaboradores, actualizarColaboradores] = useState([{
+
+    equipo: "Front End",
+    foto:"https://cdn140.picsart.com/362875794052211.png?to=crop&type=webp&r=1456x1517&q=85",
+    nombre: "McLovin",
+    puesto:"Fuck Boy",},
+
+  {
+    // id: uuid(),
+    equipo: "Front End",
+    foto: "https://github.com/harlandlohora.png",
+    nombre: "Harland Lohora",
+    puesto: "Instructor"
+  },
+  {
+    // id: uuid(),
+    equipo: "Programación",
+    foto: "https://github.com/danisiliente.png",
+    nombre: "Genesys Rondón",
+    puesto: "Desarrolladora de software e instructora"
+  },
+  {
+    // id: uuid(),
+    equipo: "UX y Diseño",
+    foto: "https://github.com/JeanmarieAluraLatam.png",
+    nombre: "Jeanmarie Quijada",
+    puesto: "Instructora en Alura Latam"
+  },
+  {
+    // id: uuid(),
+    equipo: "Programación",
+    foto: "https://github.com/christianpva.png",
+    nombre: "Christian Velasco",
+    puesto: "Head de Alura e Instructor"
+  },
+  {
+    // id: uuid(),
+    equipo: "Innovación y Gestión",
+    foto: "https://github.com/JoseDarioGonzalezCha.png",
+    nombre: "Jose Gonzalez",
+    puesto: "Dev FullStack"
+
+  }])
   //Ternario --> condicion ? seMuestra : noSeMuestra
   // condicion && seMuestra
 
@@ -61,6 +104,10 @@ function App() {
     console.log("new", colaborador)
     //spread operator
     actualizarColaboradores([...colaboradores, colaborador])
+  }
+
+  const eliminarColaborador = () => {
+    console.log("delete")
   }
 
   return (
@@ -79,8 +126,15 @@ function App() {
         // equipos.map((equipo) => {
         //   return <Equipo datos={equipo} key={equipo.titulo}/>
         // })
-        equipos.map((equipo) =><Equipo datos={equipo} key={equipo.titulo}/>) //usar map sin return, en arrow function si no se usan llaves lo que sigue es el resultado
+        equipos.map((equipo) =><Equipo 
+        datos={equipo} 
+        key={equipo.titulo}
+        colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
+        eliminarColaborador={eliminarColaborador}
+        />) //usar map sin return, en arrow function si no se usan llaves lo que sigue es el resultado
       }
+
+      <Footer/>
 
     </div>
   );
